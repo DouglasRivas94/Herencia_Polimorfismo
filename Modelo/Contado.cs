@@ -8,7 +8,7 @@ namespace Modelo
 {
     public class Contado : Venta
     {
-        public int n;
+        public static int n;
         public Contado()
             : base()
         {

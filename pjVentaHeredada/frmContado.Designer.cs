@@ -30,21 +30,26 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCliente = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtRUC = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.cboProducto = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.cboProducto = new System.Windows.Forms.ComboBox();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.btnAdquirir = new System.Windows.Forms.Button();
             this.lvDetalle = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lblNeto = new System.Windows.Forms.Label();
@@ -76,21 +81,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS DEL CLIENTE";
             // 
-            // label2
+            // txtRUC
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Cliente o Razon Social";
-            // 
-            // txtCliente
-            // 
-            this.txtCliente.Location = new System.Drawing.Point(19, 49);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(215, 23);
-            this.txtCliente.TabIndex = 1;
+            this.txtRUC.Location = new System.Drawing.Point(271, 49);
+            this.txtRUC.Name = "txtRUC";
+            this.txtRUC.Size = new System.Drawing.Size(100, 23);
+            this.txtRUC.TabIndex = 3;
             // 
             // label3
             // 
@@ -101,12 +97,21 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "RUC";
             // 
-            // txtRUC
+            // txtCliente
             // 
-            this.txtRUC.Location = new System.Drawing.Point(271, 49);
-            this.txtRUC.Name = "txtRUC";
-            this.txtRUC.Size = new System.Drawing.Size(100, 23);
-            this.txtRUC.TabIndex = 3;
+            this.txtCliente.Location = new System.Drawing.Point(19, 49);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(215, 23);
+            this.txtCliente.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Cliente o Razon Social";
             // 
             // label4
             // 
@@ -157,6 +162,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DATOS DE LA VENTA";
             // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(271, 53);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(100, 23);
+            this.txtCantidad.TabIndex = 4;
+            // 
+            // cboProducto
+            // 
+            this.cboProducto.FormattingEnabled = true;
+            this.cboProducto.Location = new System.Drawing.Point(19, 53);
+            this.cboProducto.Name = "cboProducto";
+            this.cboProducto.Size = new System.Drawing.Size(202, 23);
+            this.cboProducto.TabIndex = 3;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -175,21 +195,6 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Seleccione un Producto";
             // 
-            // cboProducto
-            // 
-            this.cboProducto.FormattingEnabled = true;
-            this.cboProducto.Location = new System.Drawing.Point(19, 53);
-            this.cboProducto.Name = "cboProducto";
-            this.cboProducto.Size = new System.Drawing.Size(202, 23);
-            this.cboProducto.TabIndex = 3;
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(271, 53);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(100, 23);
-            this.txtCantidad.TabIndex = 4;
-            // 
             // btnAdquirir
             // 
             this.btnAdquirir.Location = new System.Drawing.Point(524, 213);
@@ -198,14 +203,48 @@
             this.btnAdquirir.TabIndex = 7;
             this.btnAdquirir.Text = "Adquirir";
             this.btnAdquirir.UseVisualStyleBackColor = true;
+            this.btnAdquirir.Click += new System.EventHandler(this.btnAdquirir_Click);
             // 
             // lvDetalle
             // 
+            this.lvDetalle.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.lvDetalle.GridLines = true;
             this.lvDetalle.Location = new System.Drawing.Point(12, 270);
             this.lvDetalle.Name = "lvDetalle";
             this.lvDetalle.Size = new System.Drawing.Size(630, 97);
             this.lvDetalle.TabIndex = 8;
             this.lvDetalle.UseCompatibleStateImageBehavior = false;
+            this.lvDetalle.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ITEM";
+            this.columnHeader1.Width = 120;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Descripcion Del Producto";
+            this.columnHeader2.Width = 240;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Cantidad";
+            this.columnHeader3.Width = 90;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Precio";
+            this.columnHeader4.Width = 90;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Subtotal";
+            this.columnHeader5.Width = 90;
             // 
             // label10
             // 
@@ -263,6 +302,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmContado";
             this.Text = "frmContado";
+            this.Load += new System.EventHandler(this.frmContado_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -295,5 +335,10 @@
         private Label label11;
         private Label lblNeto;
         private ListBox lstResumen;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader columnHeader5;
     }
 }
